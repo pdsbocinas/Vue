@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+  <h1>{{ nombre }}</h1>
+  <input type="text" v-model='nuevaTarea' 
+         placeholder="introducir tarea">
+  <input type="submit" @click="guardarTarea(nuevaTarea)">
+  
+  <ul v-for="tarea in tareas" | orderBy 'nombre' -1>
+    <li><a href="#" @click="eliminarTarea(tarea)">X</a>{{ tarea.nombre }}</li>
+  </ul>
+
+</body>
+</html>
+
+<script>
+  new Vue ({
+  
+  el: 'body',
+  
+  data: {
+    nuevaTarea: '',
+    
+    tareas: [
+      {nombre: 'hacerTarea' },
+      {nombre: 'corregirTarea' },
+      {nombre: 'entregarTarea' },
+      {nombre: 'verTarea' },
+    ],
+  },
+  
+  methods: {
+    guardarTarea: function(tarea){
+      if(tarea.trim()){
+      this.tareas.push({nombre:tarea});
+      this.nuevaTarea = "";
+      }else{
+        alert('debes ingresar tarea');
+      }
+    },
+    
+    eliminarTarea: function(tarea){
+      if(confirm('Eliminar' + tarea.nombre + '?'));
+        this.tareas.$remove(tarea);
+    }
+  }
+</script>
