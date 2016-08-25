@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="main" class="panel panel-default">
+		<form action="" @submit.prevent="enviarForm">
+			<input type="text" v-model="nombre">
+			<input type="submit" value="Enviar Formulario">
+		</form>
+		<!--button @click="saludar">Enviar Saludo</button-->
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+	<script type="text/javascript" src="js/03-main.js"></script>
+</body>
+</html>

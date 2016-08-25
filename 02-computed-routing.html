@@ -4,31 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<style>
-		input, textarea {
-			display: block;
-			border: 1px solid #000;
-		}
-	</style>
 </head>
 <body>
+	<div id="main" class="panel panel-default">
+		<div class="panel-body">
+			<form action="" @submit.prevent="enviarDatos">
+				<div class="form-group">
+					<input v-model="nombre" type="text" placeholder="Nombre" class="form-control">
+				</div>
+				<div class="form-group">
+					<input v-model="edad" type="number" placeholder="Edad" class="form-control">
+				</div>
+				<div class="form-group">
+					<input v-model="sexo" type="text" placeholder="Sexo" class="form-control">
+				</div>
+				<div class="form-group">
+					<input v-model="mail" type="email" placeholder="Email" class="form-control">
+				</div>
 
+				<button v-if="todaLaInfo" type="submit" class="btn btn-info pull-right">Enviar datos</button>
+			</form>
+		</div>
 
-	
+		{{ $data | json }}
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
-
-	<script type="text/javascript">
-		
-		new Vue ({
-
-			el: 'body',
-
-			data: {
-				mensaje: 'dejar un mensaje'
-			}
-
-		})
-
-	</script>
+	<script type="text/javascript" src="js/02-main.js"></script>
 </body>
 </html>
