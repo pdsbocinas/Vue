@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="main" class="panel panel-default">
+		
+		<template v-for="numero in numeros">
+			<h1>{{ numero }}</h1>
+			<hr>
+		</template>
+		<ul>
+			<li v-for="dato in persona">
+				{{ $key }} - {{ dato }}
+			</li>
+
+			<li v-for="numero in numeros">
+				{{ numero }}
+			</li>
+
+			<li v-for="numero in 30">
+				{{ numero }}a
+			</li>
+		</ul>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+	<script type="text/javascript" src="js/04-main.js"></script>
+</body>
+</html>
